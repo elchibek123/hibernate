@@ -1,1 +1,1 @@
-# java-hibernate
+# hibernate
