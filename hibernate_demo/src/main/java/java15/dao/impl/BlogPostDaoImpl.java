@@ -39,10 +39,10 @@ public class BlogPostDaoImpl implements BlogPostDao {
             return entityManager.createQuery("SELECT b FROM BlogPost b ORDER BY publishDate DESC", BlogPost.class).getResultList();
         } catch (Exception e) {
             System.err.println("Failed to fetch blog posts: " + e.getMessage());
+            return Collections.emptyList();
         } finally {
             entityManager.close();
         }
-        return Collections.emptyList();
     }
 
     @Override

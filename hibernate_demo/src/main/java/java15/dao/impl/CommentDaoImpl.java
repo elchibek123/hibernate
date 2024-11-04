@@ -46,10 +46,10 @@ public class CommentDaoImpl implements CommentDao {
             return entityManager.createQuery("SELECT c FROM Comment c ORDER BY publishDate DESC", Comment.class).getResultList();
         } catch (Exception e) {
             System.err.println("Failed to fetch comments for comments: " + e.getMessage());
+            return Collections.emptyList();
         } finally {
                 entityManager.close();
         }
-        return Collections.emptyList();
     }
 
     @Override
